@@ -17,9 +17,8 @@ $(function() {
   var options = {
     anchors: 'a',
     scroll: false,
-    // prefetch: true,
-    // prefetchOn: 'intent touchstart',
-    // cacheLength: 2,
+    prefetch: true,
+    cacheLength: 20,
     onBefore: function($currentTarget, $container) {
       // The function to run before a page load is started.
       // this.onStart.duration = 0;

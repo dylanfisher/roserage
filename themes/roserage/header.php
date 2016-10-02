@@ -35,7 +35,7 @@
 </head>
 <body>
   <div id="smoothstate-container">
-    <div <?php body_class('container'); ?>>
+    <div <?php body_class(); ?>>
       <header class="header" id="header">
         <nav>
           <h1 class="site-title">

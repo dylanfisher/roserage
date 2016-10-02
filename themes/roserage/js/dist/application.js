@@ -1,3 +1,47 @@
+/*global jQuery */
+/*!
+* FitText.js 1.2
+*
+* Copyright 2011, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Date: Thu May 05 14:23:00 2011 -0600
+*/
+
+(function( $ ){
+
+  $.fn.fitText = function( kompressor, options ) {
+
+    // Setup options
+    var compressor = kompressor || 1,
+        settings = $.extend({
+          'minFontSize' : Number.NEGATIVE_INFINITY,
+          'maxFontSize' : Number.POSITIVE_INFINITY
+        }, options);
+
+    return this.each(function(){
+
+      // Store the object
+      var $this = $(this);
+
+      // Resizer() resizes items based on the object width divided by the compressor * 10
+      var resizer = function () {
+        $this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+      };
+
+      // Call once to set.
+      resizer();
+
+      // Call on resize. Opera debounces their resize by default.
+      $(window).on('resize.fittext orientationchange.fittext', resizer);
+
+    });
+
+  };
+
+})( jQuery );
+
 /*!
  * smoothState.js is jQuery plugin that progressively enhances
  * page loads to behave more like a single-page application.
@@ -909,6 +953,17 @@ $(document).on('app:ready', function() {
 });
 
 $(document).on('app:ready', function() {
+  var $title = $('#responsive-title');
+
+  if ( $title.length ) {
+    $title.fitText(0.5, {
+      minFontSize: '20px',
+      maxFontSize: '200px'
+    });
+  }
+});
+
+$(document).on('app:ready', function() {
   var $header = $('#header');
   var isHomePage = $('.home').length;
 
@@ -948,9 +1003,8 @@ $(function() {
   var options = {
     anchors: 'a',
     scroll: false,
-    // prefetch: true,
-    // prefetchOn: 'intent touchstart',
-    // cacheLength: 2,
+    prefetch: true,
+    cacheLength: 20,
     onBefore: function($currentTarget, $container) {
       // The function to run before a page load is started.
       // this.onStart.duration = 0;
