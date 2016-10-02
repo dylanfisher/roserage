@@ -4,6 +4,7 @@
 
 // Font stacks
 $font-stack__regular : sans-serif;
+$font-stack__accent : 'optibauer', sans-serif;
 
 ///////////////////////////////////////////////////
 // Typography definitions
@@ -12,7 +13,15 @@ $font-stack__regular : sans-serif;
 // Regular
 @mixin font--regular {
   font-family: $font-stack__regular;
-  font-size:      1.8rem;
-  line-height:    2.1rem;
-  letter-spacing: 0.025rem;
+  font-size:      20px;
+  line-height:    1.4;
+  letter-spacing: 0;
+}
+
+@mixin font--title {
+  font-family: $font-stack__accent;
+  font-size:      72px;
+  line-height:    1.1;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }

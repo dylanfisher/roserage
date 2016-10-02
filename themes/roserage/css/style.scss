@@ -9,6 +9,7 @@ Version: 1.0
 @import "modules/ascii";
 
 // Modules (these shouldn't output any CSS)
+@import "modules/fonts";
 @import "modules/variables";
 @import "modules/variables_bootstrap";
 @import "modules/extends";
@@ -21,7 +22,6 @@ Version: 1.0
 @import "base/bootstrap_custom";
 @import "base/base_styles";
 @import "base/helper_classes";
-@import "base/chromeframe";
 
 // UI
 @import "ui/links";
