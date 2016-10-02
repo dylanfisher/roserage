@@ -891,6 +891,44 @@ App.breakpoint.isMobile = function() {
   return ( App.breakpoint('xs') || App.breakpoint('sm') );
 };
 
+$(document).on('app:ready', function() {
+  var $backgroundFader = $('#background-color-fader');
+
+  if ( $backgroundFader.length ) {
+    $(window).on('scroll.backgroundColor', function() {
+      var opacity = 1 - ( App.scrollTop / App.windowHeight );
+      opacity = Math.max(opacity, 0);
+
+      $backgroundFader.css({ opacity: opacity });
+    });
+
+    $(window).trigger('scroll.backgroundColor');
+  } else {
+    $(window).off('scroll.backgroundColor');
+  }
+});
+
+$(document).on('app:ready', function() {
+  var $header = $('#header');
+  var isHomePage = $('.home').length;
+
+  if ( $header.length && isHomePage ) {
+    $(window).on('scroll.headerFixedScroll', function() {
+      $headerOffset = App.windowHeight;
+
+      if ( App.scrollTop >= $headerOffset ) {
+        $header.addClass('active');
+      } else {
+        $header.removeClass('active');
+      }
+    });
+
+    $(window).trigger('scroll.headerFixedScroll');
+  } else {
+    $(window).off('scroll.headerFixedScroll');
+  }
+});
+
 $(function() {
   // smoothState is used to set up a turbolinks-style environment.
   // https://github.com/miguel-perez/smoothState.js?files=1

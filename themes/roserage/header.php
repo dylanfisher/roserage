@@ -33,14 +33,15 @@
   <link rel="icon" type="image/png" href="<?php echo get_bloginfo('template_url'); ?>/images/favicon.png">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-  <div class="container" id="smoothstate-container">
-    <header class="header">
-      <nav>
-        <h1 class="site-title">
-          <a href="<?php bloginfo('url'); ?>/" rel="home"><?php bloginfo('name'); ?></a>
-        </h1>
-        <a href="">[]</a>
-        <a href="">Information</a>
-      </nav>
-    </header>
+<body>
+  <div id="smoothstate-container">
+    <div <?php body_class('container'); ?>>
+      <header class="header" id="header">
+        <nav>
+          <h1 class="site-title">
+            <a href="<?php bloginfo('url'); ?>/" rel="home"><?php bloginfo('name'); ?></a>
+          </h1>
+          <a href="">[]</a>
+          <a href="">Information</a>
+        </nav>
+      </header>

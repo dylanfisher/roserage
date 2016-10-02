@@ -4,7 +4,13 @@
 
 .glossary-item {
   position: relative;
-  margin: 150px 0;
+  margin: 180px 0;
+  padding-right: 0.55em;
+}
+
+.glossary-item__inner {
+  display: block;
+  box-shadow: 0 0 200px 0px rgba(255, 255, 255, 0.1);
 }
 
 .glossary-item__index,
@@ -20,7 +26,8 @@
 .glossary-item__title {
   bottom: -0.55em;
   right: -0.55em;
-  width: 75%;
+  width: 85%;
+  mix-blend-mode: difference;
 }
 
 .glossary-item__image {

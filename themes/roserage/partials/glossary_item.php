@@ -1,10 +1,10 @@
 <?php $index = get_query_var( 'index', 1 ); ?>
 
-<?php $offset_class = !($index % 2) ? 'col-sm-offset-6' : ''; ?>
+<?php $offset_class = !($index % 2) ? 'col-sm-offset-4 col-md-offset-5 col-lg-offset-6' : ''; ?>
 
-<div class="glossary-item">
-  <div class="col-sm-6 <?php echo $offset_class; ?>">
-    <a href="<?php the_permalink(); ?>">
+<div class="glossary-item title">
+  <div class="col-sm-8 col-md-7 col-lg-6 <?php echo $offset_class; ?>">
+    <a class="glossary-item__inner" href="<?php the_permalink(); ?>">
       <div class="glossary-item__index title">
         <?php echo integerToRoman( $index ); ?>
       </div>

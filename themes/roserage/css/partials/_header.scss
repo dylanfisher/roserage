@@ -1,0 +1,23 @@
+//
+// Header
+//
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  transition: opacity 0.6s;
+  background: $black;
+}
+
+.home {
+  .header {
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

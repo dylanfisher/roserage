@@ -20,8 +20,12 @@ $font-stack__accent : 'optibauer', sans-serif;
 
 @mixin font--title {
   font-family: $font-stack__accent;
-  font-size:      72px;
-  line-height:    1.1;
-  letter-spacing: 0;
+  font-size:      60px;
+  line-height:    0.9;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
+
+  @include breakpoint(sm) {
+    font-size: 86px;
+  }
 }
