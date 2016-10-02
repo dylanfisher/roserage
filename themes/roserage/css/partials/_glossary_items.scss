@@ -1,0 +1,28 @@
+//
+// Glossary items
+//
+
+.glossary-item {
+  position: relative;
+  margin: 150px 0;
+}
+
+.glossary-item__index,
+.glossary-item__title {
+  position: absolute;
+}
+
+.glossary-item__index {
+  top: -0.55em;
+  left: 50px;
+}
+
+.glossary-item__title {
+  bottom: -0.55em;
+  right: -0.55em;
+  width: 75%;
+}
+
+.glossary-item__image {
+
+}

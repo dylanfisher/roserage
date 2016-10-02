@@ -3,6 +3,29 @@
   <div class="intro-statement">
     <p>Pellentesque nec mi a augue venenatis fringilla sed id est. Proin pellentesque est erat, nec gravida nisl auctor a. Sed pharetra eros turpis. Quisque mollis vitae ipsum ac blandit. Maecenas sit amet vehicula libero. Fusce rutrum felis sit amet erat vehicula tempor. Etiam vel massa et neque ornare cursus. Aenean orci augue, sollicitudin vel nibh a, faucibus consectetur nibh. Duis et dolor vitae quam pulvinar pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et vulputate lorem, eu viverra lacus. Proin vel mauris vehicula felis tristique aliquet id non velit.</p>
   </div>
+
+  <div class="glossary">
+    <div class="row">
+      <?php
+        $args = array(
+          'post_type' => 'post',
+          'posts_per_page' => -1,
+        );
+
+        $the_query = new WP_Query( $args );
+
+        if ( $the_query->have_posts() ): $index = 0;
+          while ( $the_query->have_posts() ): $index++;
+            $the_query->the_post();
+            set_query_var('index', $index);
+            get_template_part('partials/glossary_item');
+          endwhile;
+          wp_reset_postdata();
+        endif;
+      ?>
+    </div>
+  </div>
+
   <div class="contact-area">
     <div class="row">
       <div class="col-sm-5">

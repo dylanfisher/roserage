@@ -5,4 +5,4 @@
 //
 
 // Custom Image Sizes (Name, Width, Height, Hard Crop boolean)
-// add_image_size( 'small', 400, 300, false );
+add_image_size( 'glossary', 900, 630, true );
