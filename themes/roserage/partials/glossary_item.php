@@ -1,4 +1,4 @@
-<?php $index = get_query_var( 'index', 1 ); ?>
+<?php $index = $the_query->current_post + 1; ?>
 
 <?php $offset_class = !($index % 2) ? 'col-sm-offset-4 col-md-offset-5 col-lg-offset-6' : ''; ?>
 

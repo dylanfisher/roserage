@@ -23,6 +23,14 @@ html {
   transform: translate(0, -50%);
 }
 
+.section__inner--fixed {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
 .background-color-fader {
   position: fixed;
   top: 0;

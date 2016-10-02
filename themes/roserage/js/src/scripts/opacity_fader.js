@@ -1,12 +1,12 @@
 $(document).on('app:ready', function() {
-  var $backgroundFader = $('#background-color-fader');
+  var $faders = $('.fader');
 
-  if ( $backgroundFader.length ) {
+  if ( $faders.length ) {
     $(window).on('scroll.backgroundColor', function() {
       var opacity = 1 - ( App.scrollTop / App.windowHeight );
       opacity = Math.max(opacity, 0);
 
-      $backgroundFader.css({ opacity: opacity });
+      $faders.css({ opacity: opacity });
     });
 
     $(window).trigger('scroll.backgroundColor');

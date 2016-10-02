@@ -1,7 +1,21 @@
-<?php the_post() ?>
+<?php
+  the_post();
+
+  $postId = get_the_ID();
+
+  $allPosts = get_posts(array(
+    'fields' => 'ids',
+    'numberposts' => -1,
+    'orderby' => 'date',
+    'order' => 'DESC'
+  ));
+
+  $index = array_search($postId, $allPosts) + 1;
+?>
+
 <div id="post-<?php the_ID() ?>" <?php post_class() ?>>
   <section class="section text-center" id="logo-wrapper">
-    <div class="section__inner">
+    <div class="section__inner--fixed fader">
       <h2 class="title responsive-title" id="responsive-title">
         <?php
           $text = get_the_title();
@@ -16,6 +30,8 @@
       </h2>
     </div>
   </section>
+
+  <?php echo '<div class="post-index title responsive-title-subordinate fader">' . integerToRoman( $index ) . '</div>'; ?>
 
   <section class="section">
     <?php

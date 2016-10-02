@@ -22,10 +22,10 @@
 
         $the_query = new WP_Query( $args );
 
-        if ( $the_query->have_posts() ): $index = 0;
-          while ( $the_query->have_posts() ): $index++;
+        if ( $the_query->have_posts() ):
+          while ( $the_query->have_posts() ):
             $the_query->the_post();
-            set_query_var('index', $index);
+            set_query_var('the_query', $the_query);
             get_template_part('partials/glossary_item');
           endwhile;
           wp_reset_postdata();
