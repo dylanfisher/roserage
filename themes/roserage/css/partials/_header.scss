@@ -2,6 +2,8 @@
 // Header
 //
 
+$header-height: 40px;
+
 .header {
   position: fixed;
   top: 0;
@@ -10,6 +12,7 @@
   z-index: 1;
   transition: opacity 0.6s;
   background: $black;
+  height: $header-height;
 }
 
 .home {
@@ -20,4 +23,29 @@
       opacity: 1;
     }
   }
+}
+
+.site-title,
+.header-link--glossary,
+.header-link--information {
+  position: absolute;
+  line-height: $header-height;
+}
+
+.site-title {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.header-link--site-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header-link--glossary {
+  left: $gutter;
+}
+
+.header-link--information {
+  right: $gutter;
 }

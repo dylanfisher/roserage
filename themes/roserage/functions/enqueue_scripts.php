@@ -13,7 +13,7 @@ function sandbox_enqueue_scripts() {
       'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js',
       false,
       NULL,
-      true
+      false
     );
   } elseif ( sandbox_is_local() && !is_admin() && $GLOBALS['pagenow'] != 'wp-login.php' ) {
     // DEVELOPMENT - Register jQuery locally
@@ -23,7 +23,7 @@ function sandbox_enqueue_scripts() {
       get_stylesheet_directory_uri() . '/js/lib/jquery.min.js',
       false,
       NULL,
-      true
+      false
     );
   }
 

@@ -12,7 +12,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="glossary">
     <div class="row">
       <?php
         $args = array(
@@ -34,7 +34,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="information">
     <div class="section__inner">
       <div class="row">
         <div class="col-sm-5">

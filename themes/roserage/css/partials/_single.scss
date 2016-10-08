@@ -1,5 +1,9 @@
 // Single
 
+.section--story {
+  margin-bottom: 200vh;
+}
+
 .responsive-title {
   position: relative;
   width: 80vmin;
@@ -22,4 +26,30 @@
   transform: rotate(-90deg);
   width: 0;
   height: 0;
+}
+
+.story-item__image {
+  .story-item__content {
+    margin: 0 auto 200px;
+  }
+}
+
+.story-item__text {
+  @include font--story-text;
+  mix-blend-mode: difference;
+  position: relative;
+
+  p {
+    margin: 0;
+  }
+
+  &.consecutive-text {
+    margin-top: 50vmax;
+  }
+
+  @include breakpoint(sm) {
+    .story-item__content {
+      max-width: 75%;
+    }
+  }
 }

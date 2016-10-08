@@ -4,7 +4,7 @@
 
 <div class="glossary-item title">
   <div class="col-sm-8 col-md-7 col-lg-6 <?php echo $offset_class; ?>">
-    <a class="glossary-item__inner" href="<?php the_permalink(); ?>">
+    <a class="glossary-item__shadow" href="<?php the_permalink(); ?>">
       <div class="glossary-item__index title">
         <?php echo integerToRoman( $index ); ?>
       </div>

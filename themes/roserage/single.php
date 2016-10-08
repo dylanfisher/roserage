@@ -13,6 +13,12 @@
   $index = array_search($postId, $allPosts) + 1;
 ?>
 
+<script>
+  $(function() {
+    App.controller = new ScrollMagic.Controller();
+  });
+</script>
+
 <div id="post-<?php the_ID() ?>" <?php post_class() ?>>
   <section class="section text-center" id="logo-wrapper">
     <div class="section__inner--fixed fader">
@@ -33,16 +39,70 @@
 
   <?php echo '<div class="post-index title responsive-title-subordinate fader">' . integerToRoman( $index ) . '</div>'; ?>
 
-  <section class="section">
+  <section class="section section--story" id="story">
     <?php
-      if ( have_rows('section') ):
-        while ( have_rows('section') ) : the_row();
-          if ( get_row_layout() == 'image' ):
-            $image = get_sub_field('image');
-            echo '<img src="' . $image['sizes']['large'] . '" width="' . $image['sizes']['large-width'] . '" height="' . $image['sizes']['large-height'] . '" alt="' . ( $image['alt'] ? $image['alt'] : $image['title'] ) . '">';
-          elseif ( get_row_layout() == 'text' ):
-            the_sub_field('text');
-          endif;
+      if ( have_rows('section') ): $i = 0;
+        $last_row_layout = '';
+        while ( have_rows('section') ) : the_row(); $i++;
+          echo '<div class="story-item">';
+            if ( get_row_layout() == 'image' ):
+              $image = get_sub_field('image');
+              echo '<div class="story-item__image" id="target' . $i . '">';
+                echo '<div class="story-item__inner">';
+                  echo '<img class="story-item__content glossary-item__shadow" src="' . $image['sizes']['large'] . '" width="' . $image['sizes']['large-width'] . '" height="' . $image['sizes']['large-height'] . '" alt="' . ( $image['alt'] ? $image['alt'] : $image['title'] ) . '">';
+                echo '</div>';
+              echo '</div>';
+            elseif ( get_row_layout() == 'text' ):
+              echo '<div class="story-item" id="trigger' . $i . '"></div>';
+              echo '<div class="story-item__text ' . ( $last_row_layout == 'text' ? 'consecutive-text' : '' ) . '" id="target' . $i . '">';
+                echo '<div class="story-item__inner">';
+                  echo '<div class="story-item__content">';
+                    the_sub_field('text');
+                  echo '</div>';
+                echo '</div>';
+              echo '</div>';
+    ?>
+              <script>
+                $(function() {
+                  var wipeAnimation = new TimelineMax()
+                    .fromTo('#target<?php echo $i; ?> .story-item__inner', 1, {x: '100%'}, {x: '-100%', ease: Linear.easeNone});
+
+                  // create scene to pin and link animation
+                  var scene = new ScrollMagic.Scene({
+                      triggerElement: '#trigger<?php echo $i; ?>',
+                      triggerHook: 0.5,
+                      duration: '200%'
+                    })
+                    .setPin('#target<?php echo $i; ?>', {
+                      pushFollowers: false
+                    })
+                    .setTween(wipeAnimation)
+                    // .addIndicators() // add indicators (requires plugin)
+                    .addTo(App.controller);
+
+                  // use a function to automatically adjust the duration to the window height.
+                  var durationValueCache;
+
+                  function getDuration() {
+                    return durationValueCache;
+                  }
+
+                  function updateDuration(e) {
+                    durationValueCache = Math.max( App.windowWidth, App.windowHeight );
+                  }
+
+                  $(window).on('resize', updateDuration); // update the duration when the window size changes
+
+                  $(window).triggerHandler('resize'); // set to initial value
+
+                  scene.duration(getDuration); // supply duration method
+                });
+              </script>
+    <?php
+            endif;
+          echo '</div>';
+
+          $last_row_layout = get_row_layout();
         endwhile;
       endif;
     ?>

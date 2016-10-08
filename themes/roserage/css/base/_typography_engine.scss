@@ -10,10 +10,16 @@ $font-stack__accent : 'optibauer', sans-serif;
 // Typography definitions
 ///////////////////////////////////////////////////
 
-// Regular
 @mixin font--regular {
   font-family: $font-stack__regular;
   font-size:      20px;
+  line-height:    1.4;
+  letter-spacing: 0;
+}
+
+@mixin font--small {
+  font-family: $font-stack__regular;
+  font-size:      14px;
   line-height:    1.4;
   letter-spacing: 0;
 }
@@ -24,6 +30,17 @@ $font-stack__accent : 'optibauer', sans-serif;
   line-height:    0.9;
   letter-spacing: -0.05em;
   text-transform: uppercase;
+
+  @include breakpoint(sm) {
+    font-size: 86px;
+  }
+}
+
+@mixin font--story-text {
+  font-family: $font-stack__regular;
+  font-size:      60px;
+  line-height:    1.1;
+  letter-spacing: 0;
 
   @include breakpoint(sm) {
     font-size: 86px;

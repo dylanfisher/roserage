@@ -5,12 +5,14 @@ $ = jQuery;
 var App = {
   windowWidth: $(window).width(),
   windowHeight: $(window).height(),
+  documentHeight: $(document).height(),
   scrollTop: $(window).scrollTop(),
 };
 
 $(window).resize(function() {
   App.windowWidth  = $(window).width();
   App.windowHeight = $(window).height();
+  App.documentHeight = $(document).height();
 });
 
 $(window).scroll(function() {
