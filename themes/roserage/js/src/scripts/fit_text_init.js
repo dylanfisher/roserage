@@ -8,6 +8,9 @@ $(document).on('app:ready', function() {
       maxFontSize: '200px'
     });
 
+    $title.addClass('active');
+    $titleSubordinates.addClass('active');
+
     $(window).on('resize.setResponsiveTextSize', function() {
       var fontSize = $title.css('font-size');
       $titleSubordinates.css('font-size', fontSize);

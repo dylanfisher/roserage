@@ -1,16 +1,16 @@
 <?php
   the_post();
 
-  $postId = get_the_ID();
+  $post_id = get_the_ID();
 
-  $allPosts = get_posts(array(
+  $all_posts = get_posts(array(
     'fields' => 'ids',
     'numberposts' => -1,
     'orderby' => 'date',
     'order' => 'DESC'
   ));
 
-  $index = array_search($postId, $allPosts) + 1;
+  $index = array_search($post_id, $all_posts) + 1;
 ?>
 
 <script>
@@ -37,7 +37,7 @@
     </div>
   </section>
 
-  <?php echo '<div class="post-index title responsive-title-subordinate fader">' . integerToRoman( $index ) . '</div>'; ?>
+  <?php echo '<div class="post-index fader"><div class="title responsive-title-subordinate">' . integerToRoman( $index ) . '</div></div>'; ?>
 
   <section class="section section--story" id="story">
     <?php
@@ -54,7 +54,7 @@
               echo '</div>';
             elseif ( get_row_layout() == 'text' ):
               echo '<div class="story-item" id="trigger' . $i . '"></div>';
-              echo '<div class="story-item__text ' . ( $last_row_layout == 'text' ? 'consecutive-text' : '' ) . '" id="target' . $i . '">';
+              echo '<div class="story-item__text difference-text ' . ( $last_row_layout == 'text' ? 'consecutive-text' : '' ) . '" id="target' . $i . '">';
                 echo '<div class="story-item__inner">';
                   echo '<div class="story-item__content">';
                     the_sub_field('text');
@@ -106,5 +106,34 @@
         endwhile;
       endif;
     ?>
+  </section>
+
+  <section class="section text-center">
+    <div class="section__inner">
+      <?php
+        $previous_post = get_previous_post();
+        // var_dump($previous_post);
+        if ( empty( $previous_post ) ):
+          $first_post = get_posts(array(
+            'numberposts' => 1,
+            'orderby' => 'date',
+            'order' => 'DESC'
+          ));
+
+          if ( $first_post ):
+            $first_post = $first_post[0];
+            $previous_post_url = get_permalink( $first_post );
+            $previous_post_title = get_the_title( $first_post );
+          endif;
+        else:
+          $previous_post_url = get_permalink( $previous_post->ID );
+          $previous_post_title = $previous_post->post_title;
+        endif;
+
+        echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
+          echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
+        echo '</a>';
+      ?>
+    </div>
   </section>
 </div>

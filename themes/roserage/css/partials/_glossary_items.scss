@@ -9,8 +9,13 @@
 }
 
 .glossary-item__shadow {
+  @include shadow(0.1);
   display: block;
-  box-shadow: 0 0 200px 0px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.8s;
+
+  &:hover {
+    @include shadow(0.2);
+  }
 }
 
 .glossary-item__index,
@@ -27,9 +32,4 @@
   bottom: -0.55em;
   right: -0.55em;
   width: 85%;
-  mix-blend-mode: difference;
-}
-
-.glossary-item__image {
-
 }

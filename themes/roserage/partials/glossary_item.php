@@ -9,7 +9,7 @@
         <?php echo integerToRoman( $index ); ?>
       </div>
 
-      <div class="glossary-item__title title">
+      <div class="glossary-item__title title difference-text">
         <?php the_title(); ?>
       </div>
 
