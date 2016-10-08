@@ -112,7 +112,8 @@
     <div class="section__inner">
       <?php
         $previous_post = get_previous_post();
-        // var_dump($previous_post);
+        $previous_post_url;
+
         if ( empty( $previous_post ) ):
           $first_post = get_posts(array(
             'numberposts' => 1,
@@ -130,9 +131,11 @@
           $previous_post_title = $previous_post->post_title;
         endif;
 
-        echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
-          echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
-        echo '</a>';
+        if ( !empty( $previous_post_url ) ):
+          echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
+            echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
+          echo '</a>';
+        endif;
       ?>
     </div>
   </section>
