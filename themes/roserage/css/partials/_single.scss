@@ -14,6 +14,24 @@
   }
 }
 
+.section__inner--fixed,
+.post-index {
+  &.faded {
+    opacity: 1 !important;
+    transition: opacity 0.4s;
+    transition-delay: 0.4s;
+  }
+}
+
+.section__inner--fixed.fader.faded {
+  top: 140px;
+
+  .responsive-title {
+    width: 175px;
+    margin-left: 30px;
+  }
+}
+
 .responsive-title {
   position: relative;
   width: 80vmin;
@@ -37,6 +55,15 @@
   width: 0;
   height: 0;
   z-index: 2;
+
+  &.faded {
+    left: 30px;
+    bottom: 30px;
+  }
+}
+
+.section--story {
+  overflow: hidden;
 }
 
 .story-item__image {

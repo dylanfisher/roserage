@@ -7,6 +7,24 @@ $(document).on('app:ready', function() {
       opacity = Math.max(opacity, 0);
 
       $faders.css({ opacity: opacity });
+
+      if ( opacity === 0 ) {
+        if ( !$faders.hasClass('faded') ) {
+          setTimeout(function() {
+            $(window).trigger('resize');
+          });
+        }
+
+        $faders.addClass('faded');
+      } else {
+        if ( $faders.hasClass('faded') ) {
+          setTimeout(function() {
+            $(window).trigger('resize');
+          });
+        }
+
+        $faders.removeClass('faded');
+      }
     });
 
     $(window).trigger('scroll.backgroundColor');
