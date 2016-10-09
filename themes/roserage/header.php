@@ -45,7 +45,9 @@
             $glossary_link = is_front_page() ? '#glossary' : get_bloginfo('url') . '#glossary';
             $information_link = is_front_page() ? '#information' : get_bloginfo('url') . '#information';
           ?>
-          <a class="header-link--glossary small blank-link" href="<?php echo $glossary_link ?>">[]</a>
+          <a class="header-link--glossary small blank-link" href="<?php echo $glossary_link ?>">
+            <?php get_template_part('images/svg/glossary-icon.svg'); ?>
+          </a>
           <a class="header-link--information small blank-link" href="<?php echo $information_link ?>">Information</a>
         </nav>
       </header>

@@ -12,7 +12,9 @@
   @include shadow(0.1);
   display: block;
   transition: box-shadow 0.8s;
+}
 
+a.glossary-item__shadow {
   &:hover {
     @include shadow(0.2);
   }

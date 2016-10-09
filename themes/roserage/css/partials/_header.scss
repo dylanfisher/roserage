@@ -29,10 +29,12 @@ $header-height: 40px;
 .header-link--glossary,
 .header-link--information {
   position: absolute;
-  line-height: $header-height;
+  display: inline-block;
+  line-height: 1;
 }
 
 .site-title {
+  top: 6px;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -43,9 +45,16 @@ $header-height: 40px;
 }
 
 .header-link--glossary {
+  top: $gutter - 1px;
   left: $gutter;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .header-link--information {
+  top: $gutter - 2px;
   right: $gutter;
 }
