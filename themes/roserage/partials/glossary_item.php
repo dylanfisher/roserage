@@ -1,9 +1,9 @@
 <?php $index = $the_query->current_post + 1; ?>
 
-<?php $offset_class = !($index % 2) ? 'col-sm-offset-4 col-md-offset-5 col-lg-offset-6' : ''; ?>
+<?php $offset_class = !($index % 2) ? 'col-sm-offset-4 col-md-offset-5 col-lg-offset-6' : 'col-lg-offset-1'; ?>
 
 <div class="glossary-item title">
-  <div class="col-sm-8 col-md-7 col-lg-6 <?php echo $offset_class; ?>">
+  <div class="col-sm-8 col-md-7 col-lg-5 <?php echo $offset_class; ?>">
     <a class="glossary-item__shadow" href="<?php the_permalink(); ?>">
       <div class="glossary-item__index title">
         <?php echo integerToRoman( $index ); ?>

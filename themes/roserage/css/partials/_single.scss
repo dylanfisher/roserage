@@ -1,9 +1,5 @@
 // Single
 
-.section--story {
-  margin-bottom: 100vmax;
-}
-
 .responsive-title,
 .responsive-title-subordinate {
   opacity: 0;
@@ -49,16 +45,16 @@
 
 .post-index {
   position: fixed;
-  bottom: 5px;
-  left: 5px;
+  bottom: 20px;
+  left: 20px;
   transform: rotate(-90deg);
   width: 0;
   height: 0;
   z-index: 2;
 
   &.faded {
-    left: 30px;
-    bottom: 30px;
+    left: 20px;
+    bottom: 20px;
   }
 }
 
@@ -84,6 +80,10 @@
     margin-top: 50vmax;
   }
 
+  &.last-row {
+    margin-bottom: 80vmax;
+  }
+
   @include breakpoint(sm) {
     .story-item__content {
       max-width: 75%;
@@ -93,9 +93,13 @@
 }
 
 .previous-post-link-wrapper {
-  width: 50%;
-  max-width: 550px;
+  padding: 0 $gutter;
   margin: 0 auto;
+
+  @include breakpoint(sm) {
+    width: 50%;
+    max-width: 550px;
+  }
 }
 
 .previous-post-link {

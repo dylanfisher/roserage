@@ -43,6 +43,7 @@
     <?php
       if ( have_rows('section') ): $i = 0;
         $last_row_layout = '';
+        $rows = get_field('section');
         while ( have_rows('section') ) : the_row(); $i++;
           echo '<div class="story-item">';
             if ( get_row_layout() == 'image' ):
@@ -54,7 +55,7 @@
               echo '</div>';
             elseif ( get_row_layout() == 'text' ):
               echo '<div class="story-item" id="trigger' . $i . '"></div>';
-              echo '<div class="story-item__text difference-text ' . ( $last_row_layout == 'text' ? 'consecutive-text' : '' ) . '" id="target' . $i . '">';
+              echo '<div class="story-item__text difference-text ' . ( $last_row_layout == 'text' ? 'consecutive-text' : '' ) . ( $i == count( $rows ) ? ' last-row' : '' ) . '" id="target' . $i . '">';
                 echo '<div class="story-item__inner">';
                   echo '<div class="story-item__content">';
                     the_sub_field('text');
@@ -67,7 +68,6 @@
                   var wipeAnimation = new TimelineLite()
                     .fromTo('#target<?php echo $i; ?> .story-item__inner', 1, { x: '100%' }, { x: '-100%', ease: Linear.easeNone });
 
-                  // create scene to pin and link animation
                   var scene = new ScrollMagic.Scene({
                       triggerElement: '#trigger<?php echo $i; ?>',
                       triggerHook: 0.5,
@@ -77,10 +77,8 @@
                       pushFollowers: false
                     })
                     .setTween(wipeAnimation)
-                    // .addIndicators() // add indicators (requires plugin)
                     .addTo(App.controller);
 
-                  // use a function to automatically adjust the duration to the window height.
                   var durationValueCache;
 
                   function getDuration() {
@@ -91,11 +89,11 @@
                     durationValueCache = Math.max( App.windowWidth, App.windowHeight );
                   }
 
-                  $(window).on('resize', updateDuration); // update the duration when the window size changes
+                  $(window).on('resize', updateDuration);
 
-                  $(window).triggerHandler('resize'); // set to initial value
+                  $(window).triggerHandler('resize');
 
-                  scene.duration(getDuration); // supply duration method
+                  scene.duration(getDuration);
                 });
               </script>
     <?php
