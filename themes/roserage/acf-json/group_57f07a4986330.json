@@ -23,7 +23,7 @@
                     "key": "57f07b9dcac94",
                     "name": "image",
                     "label": "Image",
-                    "display": "block",
+                    "display": "table",
                     "sub_fields": [
                         {
                             "key": "field_57f07bfc9b6b4",
@@ -48,6 +48,22 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_57fa74e792566",
+                            "label": "Half Width",
+                            "name": "half_width",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Make this image half width",
+                            "default_value": 0
                         }
                     ],
                     "min": "",
@@ -105,5 +121,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1475379422
+    "modified": 1476031782
 }

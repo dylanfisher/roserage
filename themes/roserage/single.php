@@ -27,11 +27,21 @@
           $text = get_the_title();
           $words = explode(' ', $text);
           $length = count( $words );
+          $single_word = null;
+
+          if ( $length == 1 ):
+            $single_word = $words;
+          endif;
+
           $text_1 = array_slice( $words, 0, $length / 2 );
           $text_2 = array_slice( $words, $length / 2 );
 
-          echo '<span class="responsive-title-part responsive-title-part--1">' . join( $text_1, ' ' ) . '</span>';
-          echo '<span class="responsive-title-part responsive-title-part--2">' . join( $text_2, ' ' ) . '</span>';
+          if ( $single_word ):
+            echo '<span class="responsive-title--single-word">' . join( $single_word, ' ' ) . '</span>';
+          else:
+            echo '<span class="responsive-title-part responsive-title-part--1">' . join( $text_1, ' ' ) . '</span>';
+            echo '<span class="responsive-title-part responsive-title-part--2">' . join( $text_2, ' ' ) . '</span>';
+          endif;
         ?>
       </h2>
     </div>
@@ -41,14 +51,24 @@
 
   <section class="section section--story" id="story">
     <?php
-      if ( have_rows('section') ): $i = 0;
+      if ( have_rows('section') ):
+        $i = 0;
+        $half_width_image_index = 0;
         $last_row_layout = '';
         $rows = get_field('section');
-        while ( have_rows('section') ) : the_row(); $i++;
+        while ( have_rows('section') ) : the_row();
+          $i++;
           echo '<div class="story-item">';
             if ( get_row_layout() == 'image' ):
               $image = get_sub_field('image');
-              echo '<div class="story-item__image" id="target' . $i . '">';
+              $size_class = '';
+              $image_offset_class = '';
+              if ( get_sub_field('half_width') ):
+                $half_width_image_index++;
+                $size_class = get_sub_field('half_width') ? ' story-item__image--half-width col-sm-5' : ' story-item__image--full-width';
+                $image_offset_class = ( $half_width_image_index % 2 ) ? ' story-item__image--even col-sm-offset-1' : ' story-item__image--odd col-sm-offset-6';
+              endif;
+              echo '<div class="story-item__image ' . $size_class . $image_offset_class . '" id="target' . $i . '">';
                 echo '<div class="story-item__inner">';
                   echo '<img class="story-item__content glossary-item__shadow" src="' . $image['sizes']['large'] . '" width="' . $image['sizes']['large-width'] . '" height="' . $image['sizes']['large-height'] . '" alt="' . ( $image['alt'] ? $image['alt'] : $image['title'] ) . '">';
                 echo '</div>';

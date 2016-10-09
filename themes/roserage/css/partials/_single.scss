@@ -68,9 +68,22 @@
   }
 }
 
+.story-item__image--half-width {
+  @include breakpoint(sm) {
+    &.story-item__image--even {
+      transform: translate(0, 25%);
+    }
+
+    &.story-item__image--odd {
+      transform: translate(0, -25%);
+    }
+  }
+}
+
 .story-item__text {
   @include font--story-text;
   position: relative;
+  z-index: 1;
 
   p {
     margin: 0;
