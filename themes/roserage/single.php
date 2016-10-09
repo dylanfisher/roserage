@@ -132,9 +132,11 @@
         endif;
 
         if ( !empty( $previous_post_url ) ):
-          echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
-            echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
-          echo '</a>';
+          echo '<div class="previous-post-link-wrapper">';
+            echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
+              echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
+            echo '</a>';
+          echo '</div>';
         endif;
       ?>
     </div>
