@@ -18,6 +18,13 @@ $(document).on('click.smoothScrollEvents', 'a[href*="#"]:not([href="#"])', funct
 
   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname && location.search == this.search) {
     var target = $(this.hash);
+
+    if ( target.selector == '#glossary' ) {
+      App.smoothScrollOffset = 102;
+    } else {
+      App.smoothScrollOffset = 0;
+    }
+
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
     if (target.length) {
       App.scrollTo(target);
@@ -35,7 +42,7 @@ $(document).on('scroll mousedown DOMMouseScroll mousewheel keyup', 'html, body',
   }
 });
 
-App.smoothScrollOffset = 102;
+App.smoothScrollOffset = 0;
 
 App.scrollTo = function($target, duration) {
   var durationToUse = duration !== undefined ? duration : 1000;
