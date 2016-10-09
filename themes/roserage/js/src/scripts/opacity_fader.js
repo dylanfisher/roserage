@@ -1,4 +1,4 @@
-$(document).on('app:ready', function() {
+$(document).on('ready', function() {
   var $faders = $('.fader');
 
   if ( $faders.length ) {

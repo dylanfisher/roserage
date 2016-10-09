@@ -1,4 +1,4 @@
-$(document).on('app:ready', function() {
+$(document).on('ready', function() {
   var $title = $('#responsive-title');
   var $titleSubordinates = $('.responsive-title-subordinate');
 

@@ -64,8 +64,8 @@
     ?>
               <script>
                 $(function() {
-                  var wipeAnimation = new TimelineMax()
-                    .fromTo('#target<?php echo $i; ?> .story-item__inner', 1, {x: '100%'}, {x: '-100%', ease: Linear.easeNone});
+                  var wipeAnimation = new TimelineLite()
+                    .fromTo('#target<?php echo $i; ?> .story-item__inner', 1, { x: '100%' }, { x: '-100%', ease: Linear.easeNone });
 
                   // create scene to pin and link animation
                   var scene = new ScrollMagic.Scene({
