@@ -3,6 +3,36 @@
     "title": "Posts",
     "fields": [
         {
+            "key": "field_5803a5dc7dfee",
+            "label": "Foreground Color",
+            "name": "foreground_color",
+            "type": "color_picker",
+            "instructions": "This is the text color color.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#FFFFFF"
+        },
+        {
+            "key": "field_5803a5f97dff0",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "color_picker",
+            "instructions": "Use a dark background color.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#000000"
+        },
+        {
             "key": "field_57f07b979b6ae",
             "label": "Section",
             "name": "section",
@@ -121,5 +151,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1476031782
+    "modified": 1476634656
 }

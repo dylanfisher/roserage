@@ -11,6 +11,19 @@
   ));
 
   $index = array_search($post_id, $all_posts) + 1;
+
+  $foreground_color = get_field('foreground_color');
+  $background_color = get_field('background_color');
+
+  echo '<style>';
+    if ( $background_color ) {
+      echo 'html { background: ' . $background_color . ' }';
+    }
+
+    if ( $foreground_color ) {
+      echo '.post, .post a { color: ' . $foreground_color . ' }';
+    }
+  echo '</style>';
 ?>
 
 <script>
