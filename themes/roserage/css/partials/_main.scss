@@ -66,6 +66,12 @@ html {
   position: relative;
   max-width: 750px;
   margin: 0 auto;
+
+  svg {
+    width: 750px;
+    height: 61px;
+    max-width: 100%;
+  }
 }
 
 .circle-animation {
