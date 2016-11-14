@@ -2,9 +2,10 @@
 
   <section class="section text-center" id="logo-wrapper">
     <div class="section__inner">
-      <div class="roserage-logo">
-        <?php get_template_part('images/svg/roserage-logo.svg'); ?>
+      <div class="narc-logo">
+        <?php get_template_part( 'images/svg/narc-logo.svg' ); ?>
       </div>
+      <?php get_template_part( 'partials/circle_animation' ); ?>
     </div>
   </section>
 
