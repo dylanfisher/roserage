@@ -61,7 +61,7 @@
                             "name": "image",
                             "type": "image",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -111,7 +111,7 @@
                             "name": "text",
                             "type": "textarea",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -151,5 +151,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1476634656
+    "modified": 1479360370
 }
