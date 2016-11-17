@@ -5118,10 +5118,15 @@ App.setLightboxContent = function( $originalElement ) {
 
 $(document).on('ready', function() {
   var $faders = $('.fader');
+  var scrollOffset = 0;
 
   if ( $faders.length ) {
+    if ( $('.circle-animation').length ) {
+      scrollOffset = 0.5;
+    }
+
     $(window).on('scroll.backgroundColor', function() {
-      var opacity = 1 - ( App.scrollTop / App.windowHeight );
+      var opacity = 1 - ( App.scrollTop / App.windowHeight ) + scrollOffset;
       opacity = Math.max(opacity, 0);
 
       $faders.css({ opacity: opacity });
