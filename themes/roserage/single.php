@@ -83,7 +83,7 @@
               endif;
               echo '<div class="story-item__image ' . $size_class . $image_offset_class . '" id="target' . $i . '">';
                 echo '<div class="story-item__inner">';
-                  echo '<img class="story-item__content glossary-item__shadow" src="' . $image['sizes']['large'] . '" width="' . $image['sizes']['large-width'] . '" height="' . $image['sizes']['large-height'] . '" alt="' . ( $image['alt'] ? $image['alt'] : $image['title'] ) . '">';
+                  echo '<img class="story-item__content glossary-item__shadow" src="' . $image['sizes']['large'] . '" width="' . $image['sizes']['large-width'] . '" height="' . $image['sizes']['large-height'] . '" alt="' . ( $image['alt'] ? $image['alt'] : $image['title'] ) . '" data-lightbox="' . $image['url'] . '">';
                 echo '</div>';
               echo '</div>';
             elseif ( get_row_layout() == 'text' ):

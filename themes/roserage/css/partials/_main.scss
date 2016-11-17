@@ -27,8 +27,12 @@ html {
 }
 
 .section {
-  min-height: 100vh;
+  min-height: 70vh;
   position: relative;
+}
+
+.section--full-viewport {
+  min-height: 100vh;
 }
 
 .section__inner {
