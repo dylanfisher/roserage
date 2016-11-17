@@ -116,8 +116,7 @@
 }
 
 .previous-post-link {
-  @include font--story-text;
-  font-weight: bold;
+  @include font--title;
   text-transform: uppercase;
   display: inline-block;
   width: 100%;

@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////
 
 // Font stacks
-$font-stack__regular : sans-serif;
+$font-stack__regular : 'akzidenz-grotesk-be-regular', sans-serif;
 $font-stack__accent : 'optibauer', sans-serif;
 
 ///////////////////////////////////////////////////
@@ -19,7 +19,7 @@ $font-stack__accent : 'optibauer', sans-serif;
 
 @mixin font--small {
   font-family: $font-stack__regular;
-  font-size:      14px;
+  font-size:      16px;
   line-height:    1.4;
   letter-spacing: 0;
 }
@@ -43,6 +43,6 @@ $font-stack__accent : 'optibauer', sans-serif;
   letter-spacing: 0;
 
   @include breakpoint(sm) {
-    font-size: 86px;
+    font-size: 118px;
   }
 }

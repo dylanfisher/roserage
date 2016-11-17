@@ -22,7 +22,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subtitle {
+  font-family: $font-stack__accent;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
   margin-left: 2em;
+  text-transform: uppercase;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  & + br {
+    display: none;
+  }
 }
 
 .small {
