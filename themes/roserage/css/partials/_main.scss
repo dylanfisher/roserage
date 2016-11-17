@@ -78,6 +78,11 @@ html {
   }
 }
 
+.circle-animation,
+.circle-outline {
+  outline: 10px solid $black;
+}
+
 .circle-animation {
   position: absolute;
   overflow: hidden;
@@ -114,6 +119,14 @@ html {
   top: 0;
   left: 0;
   vector-effect: non-scaling-stroke;
+}
+
+.circle-outline__circle {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
 }
 
 @keyframes spin {
