@@ -121,11 +121,12 @@ html {
   vector-effect: non-scaling-stroke;
 }
 
-.circle-outline__circle {
-  display: none;
+.circle-outline__inner {
+  transform: scale(0.995);
+  transform-origin: center center;
 
   @include breakpoint(sm) {
-    display: block;
+    transform: none;
   }
 }
 
