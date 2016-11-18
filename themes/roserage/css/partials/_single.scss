@@ -63,9 +63,18 @@
 }
 
 .story-item__image {
+  text-align: center;
+
   .story-item__content {
     margin: 0 auto 200px;
+    display: inline-block;
   }
+}
+
+.story-item__caption {
+  @include font--caption;
+  margin-left: 0.5em;
+  text-align: left;
 }
 
 .story-item__image--half-width {

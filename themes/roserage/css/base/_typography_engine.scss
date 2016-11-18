@@ -24,6 +24,13 @@ $font-stack__accent : 'optibauer', sans-serif;
   letter-spacing: 0;
 }
 
+@mixin font--caption {
+  font-size: 18px;
+  opacity: 0.3;
+  margin-top: 0.5em;
+  line-height: 1.2;
+}
+
 @mixin font--title {
   font-family: $font-stack__accent;
   font-size:      60px;

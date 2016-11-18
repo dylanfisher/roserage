@@ -5107,7 +5107,7 @@ App.setLightboxContent = function( $originalElement ) {
   }
 
   var content = '<div class="lightbox__image-wrapper">' + fullImageHTML + '</div>';
-  var captionHTML = caption ? ( '<div class="lightbox__caption monospace" id="lightbox__caption">' + caption + '</div>' ) : '';
+  var captionHTML = caption ? ( '<div class="lightbox__caption" id="lightbox__caption">' + caption + '</div>' ) : '';
   var lightboxHTML = content + captionHTML;
 
   var captionHeight = $('#lightbox__caption').outerHeight(true);
