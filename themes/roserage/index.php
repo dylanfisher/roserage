@@ -10,10 +10,10 @@
   </section>
 
   <?php if ( get_field('intro', 'option') ): ?>
-    <section class="section text-center" id="information">
+    <section class="section section--intro" id="information">
       <div class="section__inner">
         <div class="row">
-          <div class="col-lg-10">
+          <div class="col-lg-8 col-lg-offset-2">
             <?php the_field('intro', 'option'); ?>
           </div>
         </div>
@@ -46,10 +46,10 @@
   <section class="section">
     <div class="section__inner">
       <div class="row">
-        <div class="col-sm-5 col-sm-offset-1">
+        <div class="col-sm-5 col-sm-offset-1 col-lg-4 col-lg-offset-2">
           <?php the_field('contact', 'option'); ?>
         </div>
-        <div class="col-sm-4 col-sm-offset-1">
+        <div class="col-sm-4 col-sm-offset-1 col-lg-3">
           <?php the_field('credits', 'option'); ?>
         </div>
       </div>

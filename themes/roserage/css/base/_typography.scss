@@ -1,3 +1,5 @@
+$text-indent-size: 1.5em;
+
 html {
   text-rendering: auto;
 
@@ -17,6 +19,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+  text-indent: $text-indent-size * 2;
+
+  &:first-of-type {
+    text-indent: 0;
+  }
+}
+
 .title {
   @include font--title;
 }
@@ -25,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-stack__accent;
   margin-top: 2em;
   margin-bottom: 0.5em;
-  margin-left: 2em;
+  margin-left: $text-indent-size;
   text-transform: uppercase;
 
   &:first-of-type {
