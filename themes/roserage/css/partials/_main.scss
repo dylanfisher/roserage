@@ -93,13 +93,19 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  // z-index: -1;
   width: 75vw;
   height: 75vw;
-  padding: 0;
   max-width: 610px;
   max-height: 610px;
+  padding: 0;
   transition: opacity 0.5s;
+
+  .single & {
+    width: 50vw;
+    height: 50vw;
+    max-width: 450px;
+    max-height: 450px;
+  }
 
   .faders-are-faded & {
     display: none;

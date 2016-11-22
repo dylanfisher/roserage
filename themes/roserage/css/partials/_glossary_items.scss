@@ -9,7 +9,7 @@
 }
 
 .glossary-item__shadow {
-  @include shadow(0.1);
+  @include shadow(0.2);
   display: block;
   transition: box-shadow 0.8s;
 }
