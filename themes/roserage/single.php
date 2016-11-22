@@ -17,7 +17,8 @@
 
   echo '<style>';
     if ( $background_color ) {
-      echo 'html { background: ' . $background_color . ' }';
+      echo 'html.js-ready { background: ' . $background_color . ' !important; }';
+      echo '.js-ready .circle-animation-colored-background .circle-background-fill { fill: ' . $background_color . ' !important; }';
     }
 
     if ( $foreground_color ) {
@@ -170,6 +171,7 @@
 
         if ( !empty( $previous_post_url ) ):
           echo '<div class="previous-post-link-wrapper">';
+            get_template_part( 'partials/circle_animation_colored_background' );
             echo '<a class="previous-post-link blank-link" href="' . $previous_post_url . '">';
               echo '<span class="previous-post-link__inner">' . $previous_post_title . '</span>';
             echo '</a>';

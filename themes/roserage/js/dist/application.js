@@ -4933,6 +4933,10 @@ App.breakpoint.isMobile = function() {
 };
 
 $(function() {
+  $('html').addClass('js-ready');
+});
+
+$(function() {
   // An annoying safari bug prevents mix-blend-mode from applying correctly on
   // page load in the single page stories. This probably needs to get run after
   // the images have loaded, or after scrollmagic initializes, rather than after

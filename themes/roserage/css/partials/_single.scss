@@ -141,13 +141,13 @@
   height: 0;
   padding-bottom: 100%;
   position: relative;
-  border: 1px solid;
-  border-radius: 50%;
-  transition: box-shadow 0.8s;
+  // border: 1px solid;
+  // border-radius: 50%;
+  // transition: box-shadow 0.8s;
 
-  &:hover {
-    @include shadow(0.2);
-  }
+  // &:hover {
+  //   @include shadow(0.2);
+  // }
 }
 
 .previous-post-link__inner {

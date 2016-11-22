@@ -2,13 +2,14 @@
 // Main
 //
 
-// img {
-//   opacity: 0;
-// }
-
 html {
-  background: $blue-dark;
+  background: $black;
   color: $white;
+  transition: background 0.2s;
+
+  &.js-ready {
+    background: $blue-dark;
+  }
 }
 
 .background-gradient {
@@ -91,7 +92,8 @@ html {
   }
 }
 
-.circle-animation {
+.circle-animation,
+.circle-animation-colored-background {
   position: absolute;
   overflow: hidden;
   top: 50%;
@@ -102,7 +104,6 @@ html {
   max-width: 610px;
   max-height: 610px;
   padding: 0;
-  transition: opacity 0.5s;
 
   .single & {
     width: 50vw;
@@ -110,6 +111,10 @@ html {
     max-width: 450px;
     max-height: 450px;
   }
+}
+
+.circle-animation {
+  transition: opacity 0.5s;
 
   .faders-are-faded & {
     display: none;
@@ -131,7 +136,7 @@ html {
   transform: translate(-50%, -50%) rotate(0deg);
   top: 50%;
   left: 50%;
-  // animation: spin 30s linear infinite;
+  animation: spin 30s linear infinite;
 }
 
 .circle-outline {

@@ -54,3 +54,7 @@ App.breakpoint = function(checkIfSize) {
 App.breakpoint.isMobile = function() {
   return ( App.breakpoint('xs') || App.breakpoint('sm') );
 };
+
+$(function() {
+  $('html').addClass('js-ready');
+});
