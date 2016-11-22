@@ -35,6 +35,7 @@
 <div id="post-<?php the_ID() ?>" <?php post_class() ?>>
   <section class="section text-center" id="logo-wrapper">
     <div class="section__inner--fixed fader">
+      <?php get_template_part( 'partials/circle_animation' ); ?>
       <h2 class="title responsive-title" id="responsive-title">
         <?php
           $text = get_the_title();

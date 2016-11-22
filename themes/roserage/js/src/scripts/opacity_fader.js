@@ -11,6 +11,18 @@ $(document).on('ready', function() {
       var opacity = 1 - ( App.scrollTop / App.windowHeight ) + scrollOffset;
       opacity = Math.max(opacity, 0);
 
+      if ( App.scrollTop > 0 ) {
+        $('html').addClass('has-scrolled');
+      } else {
+        $('html').removeClass('has-scrolled');
+      }
+
+      if ( App.scrollTop > 50 ) {
+        $('html').addClass('has-scrolled--medium');
+      } else {
+        $('html').removeClass('has-scrolled--medium');
+      }
+
       $faders.css({ opacity: opacity });
 
       if ( opacity === 0 ) {
@@ -21,6 +33,7 @@ $(document).on('ready', function() {
         }
 
         $faders.addClass('faded');
+        $('html').addClass('faders-are-faded');
       } else {
         if ( $faders.hasClass('faded') ) {
           setTimeout(function() {
@@ -29,6 +42,7 @@ $(document).on('ready', function() {
         }
 
         $faders.removeClass('faded');
+        $('html').removeClass('faders-are-faded');
       }
     });
 

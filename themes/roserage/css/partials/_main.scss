@@ -2,6 +2,10 @@
 // Main
 //
 
+// img {
+//   opacity: 0;
+// }
+
 html {
   background: $blue-dark;
   color: $white;
@@ -27,7 +31,7 @@ html {
 }
 
 .section {
-  min-height: 70vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -41,6 +45,11 @@ html {
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
+
+  .inner-section-height-overflow & {
+    position: static;
+    transform: none;
+  }
 }
 
 .section__inner--fixed {
@@ -78,23 +87,23 @@ html {
   }
 }
 
-.circle-animation,
-.circle-outline {
-  outline: 10px solid $black;
-}
-
 .circle-animation {
   position: absolute;
   overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  // z-index: -1;
   width: 75vw;
   height: 75vw;
   padding: 0;
   max-width: 610px;
   max-height: 610px;
+  transition: opacity 0.5s;
+
+  .faders-are-faded & {
+    display: none;
+  }
 }
 
 .circle-animation__image,
@@ -112,13 +121,12 @@ html {
   transform: translate(-50%, -50%) rotate(0deg);
   top: 50%;
   left: 50%;
-  animation: spin 30s linear infinite;
+  // animation: spin 30s linear infinite;
 }
 
 .circle-outline {
   top: 0;
   left: 0;
-  vector-effect: non-scaling-stroke;
 }
 
 .circle-outline__inner {

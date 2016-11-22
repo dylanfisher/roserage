@@ -1,11 +1,11 @@
 <div class="container">
 
-  <section class="section section--full-viewport text-center" id="logo-wrapper">
+  <section class="section text-center" id="logo-wrapper">
+    <?php get_template_part( 'partials/circle_animation' ); ?>
     <div class="section__inner">
       <div class="narc-logo">
         <?php get_template_part( 'images/svg/narc-logo.svg' ); ?>
       </div>
-      <?php get_template_part( 'partials/circle_animation' ); ?>
     </div>
   </section>
 

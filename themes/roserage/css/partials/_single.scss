@@ -43,6 +43,14 @@
   margin-left: auto;
 }
 
+.has-scrolled--medium {
+  .single {
+    .circle-animation {
+      opacity: 0;
+    }
+  }
+}
+
 .post-index {
   position: fixed;
   bottom: 20px;
