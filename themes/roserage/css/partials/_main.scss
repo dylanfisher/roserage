@@ -115,6 +115,7 @@ html {
 
 .circle-animation {
   transition: opacity 0.5s;
+  display: table;
 
   .faders-are-faded & {
     display: none;
