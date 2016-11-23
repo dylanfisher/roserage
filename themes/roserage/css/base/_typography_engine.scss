@@ -52,4 +52,8 @@ $font-stack__accent : 'optibauer', sans-serif;
   @include breakpoint(sm) {
     font-size: 118px;
   }
+
+  @include breakpoint(vert) {
+    font-size: 100px;
+  }
 }

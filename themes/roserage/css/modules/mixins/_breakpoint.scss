@@ -15,6 +15,10 @@
     @media (min-width: $breakpoint-lg) { @content; }
   }
 
+  @else if $size == vert {
+    @media (max-height: $breakpoint-vertical-sm) and (min-width: $breakpoint-sm) { @content; }
+  }
+
   @else if type-of($size) == number {
     @media (min-width: $size) { @content; }
   }
