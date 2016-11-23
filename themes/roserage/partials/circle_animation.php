@@ -21,5 +21,6 @@
       endif;
     ?>
   <?php endif; ?>
+  <?php wp_reset_postdata(); ?>
   <?php get_template_part('images/svg/circle-outline.svg'); ?>
 </div>
