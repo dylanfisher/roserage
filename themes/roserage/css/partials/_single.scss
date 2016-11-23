@@ -99,6 +99,7 @@
 
 .story-item__text {
   @include font--story-text;
+  pointer-events: none;
   position: relative;
   z-index: 1;
 
@@ -117,7 +118,7 @@
   @include breakpoint(sm) {
     .story-item__content {
       @include text-shadow;
-      max-width: 75%;
+      max-width: 80%;
       transform: translate(0, -50%);
     }
   }
