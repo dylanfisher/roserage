@@ -43,7 +43,7 @@
   margin-left: auto;
 }
 
-.has-scrolled--medium {
+.has-scrolled {
   .single {
     .circle-animation {
       opacity: 0;
@@ -68,6 +68,16 @@
 
 .section--story {
   overflow: hidden;
+}
+
+.story-item {
+  &:first-child {
+    .story-item__image {
+      .story-item__content {
+        margin-top: 150px;
+      }
+    }
+  }
 }
 
 .story-item__image {

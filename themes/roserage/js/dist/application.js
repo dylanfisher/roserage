@@ -5145,7 +5145,7 @@ $(document).on('ready', function() {
   var scrollOffset = 0;
 
   if ( $faders.length ) {
-    if ( $('.circle-animation').length ) {
+    if ( $('.home .circle-animation').length ) {
       scrollOffset = 0.5;
     }
 
@@ -5158,13 +5158,6 @@ $(document).on('ready', function() {
       } else {
         $('html').removeClass('has-scrolled');
       }
-
-      if ( App.scrollTop > 50 ) {
-        $('html').addClass('has-scrolled--medium');
-      } else {
-        $('html').removeClass('has-scrolled--medium');
-      }
-
       $faders.css({ opacity: opacity });
 
       if ( opacity === 0 ) {
